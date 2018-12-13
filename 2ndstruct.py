@@ -192,7 +192,7 @@ model.compile(loss=keras.losses.categorical_crossentropy,
               metrics=['accuracy'])
         
 print(model.summary())
-model.fit(x_train, y_train, epochs=15, batch_size=30,validation_data = (x_test, y_test))
+model.fit(x_train[:1062], y_train[:1062], epochs=15, batch_size=30,validation_data = (x_train[1062:], y_train[1062:]))
 
 
 prediction = model.predict(x_test, batch_size=30)
